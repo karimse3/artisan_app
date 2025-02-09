@@ -63,7 +63,7 @@ class _AccueilScreenState extends State<AccueilScreen> {
                 );
               },
               child: Card(
-                color:Colors.white,
+                color: Color(0xEDDBEBFF),
                 elevation: 1,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),

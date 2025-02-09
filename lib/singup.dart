@@ -97,11 +97,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             backgroundColor: Colors.green,
-            duration: Duration(seconds: 2), // مدة عرض الرسالة
+            duration: Duration(seconds: 2),
           ),
         );
 
-        // الانتظار 2 ثانية ثم التوجيه إلى صفحة تسجيل الدخول
+
         Future.delayed(const Duration(seconds: 2), () {
           if (mounted) {
             Navigator.pushReplacement(
@@ -142,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           }
 
           if (isPhone) {
-            String phone = value.replaceAll(RegExp(r'\s+'), ''); // إزالة المسافات
+            String phone = value.replaceAll(RegExp(r'\s+'), '');
             if (!RegExp(r'^\d{10}$').hasMatch(phone)) {
               return 'Le numéro doit contenir exactement 10 chiffres';
             }
@@ -177,15 +177,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
       prefixIcon: Icon(icon),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
-        borderSide: BorderSide(color: Colors.blue), // لون الحدود الأساسي
+        borderSide: BorderSide(color: Colors.blue),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
-        borderSide: BorderSide(color: Colors.blue), // لون الحدود عندما يكون الحقل غير نشط
+        borderSide: BorderSide(color: Colors.blue),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
-        borderSide: BorderSide(color: Colors.blue), // لون الحدود عندما يكون الحقل نشطًا
+        borderSide: BorderSide(color: Colors.blue),
       ),
       labelText: label,
       suffixIcon: isPassword

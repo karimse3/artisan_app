@@ -5,6 +5,7 @@ import 'login.dart';
 import 'singup.dart';
 import 'historique_reservation.dart';
 import 'splash_screen.dart';
+import 'chat_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,22 +41,23 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         useMaterial3: true,
       ),
-      // تحديد المسار الابتدائي ليكون شاشة البداية
+
       initialRoute: '/splash',
 
-      // تعريف المسارات
+
       routes: {
         '/splash': (context) => SplashScreen(),
         '/login': (context) => const LoginScreen(),
         '/signUp': (context) => const SignUpScreen(),
         '/accueil': (context) => const AccueilScreen(),
         '/main': (context) => const MainScreen(),
+        '/chat': (context) => ChatPage(professionelId: '', professionelName: ''), // ✅ إضافة صفحة الدردشة
       },
     );
   }
 }
 
-// شاشة رئيسية مع Bottom Navigation Bar
+//  Bottom Navigation Bar
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -66,14 +68,14 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  // تغيير الصفحة بناءً على الزر المختار
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
-  // قائمة الصفحات
+
   final List<Widget> _pages = [
     const AccueilScreen(),
     const ReservationScreen(),
