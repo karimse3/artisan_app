@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'avis.dart';
 import 'reservation.dart';
-import 'chat_page.dart';
 
 class ListProfessionnels extends StatefulWidget {
   final String categoryTitle;
@@ -188,15 +187,7 @@ class _ListProfessionnelsState extends State<ListProfessionnels> {
                             const SizedBox(width: 8.0),
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ChatPage(
-                                      professionelId: professionelId,
-                                      professionelName: "$prenom $nom",
-                                    ),
-                                  ),
-                                );
+                                // Add your message functionality here
                               },
                               style: const ButtonStyle(
                                 backgroundColor: MaterialStatePropertyAll(
@@ -208,7 +199,6 @@ class _ListProfessionnelsState extends State<ListProfessionnels> {
                                 style: TextStyle(color: Colors.white, fontSize: 20),
                               ),
                             ),
-
                             const Spacer(),
                             GestureDetector(
                               onTap: () {
