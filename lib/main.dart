@@ -8,6 +8,7 @@ import 'splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // تهيئة Firebase
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: "AIzaSyAZNDE1qN-Y9rYTd6sPcpEzZLgenbfFhIA",
@@ -39,10 +40,10 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         useMaterial3: true,
       ),
-
+      // تحديد المسار الابتدائي ليكون شاشة البداية
       initialRoute: '/splash',
 
-
+      // تعريف المسارات
       routes: {
         '/splash': (context) => SplashScreen(),
         '/login': (context) => const LoginScreen(),
@@ -54,6 +55,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// شاشة رئيسية مع Bottom Navigation Bar
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -64,12 +66,14 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
+  // تغيير الصفحة بناءً على الزر المختار
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+  // قائمة الصفحات
   final List<Widget> _pages = [
     const AccueilScreen(),
     const ReservationScreen(),
